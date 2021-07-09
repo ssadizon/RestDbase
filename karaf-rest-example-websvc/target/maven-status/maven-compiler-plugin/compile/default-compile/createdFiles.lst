@@ -1,0 +1,4 @@
+org/apache/karaf/examples/rest/websvc/Activator.class
+org/apache/karaf/examples/rest/websvc/Activator$1.class
+org/apache/karaf/examples/rest/websvc/ServiceCatcher.class
+org/apache/karaf/examples/rest/websvc/BookingServiceRest.class

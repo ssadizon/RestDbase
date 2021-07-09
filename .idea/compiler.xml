@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="karaf-rest-example-client-jersey" />
+        <module name="karaf-rest-example-websvc" />
+        <module name="karaf-rest-example-dbase-connector" />
+        <module name="karaf-rest-example-api" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="karaf-rest-example" target="1.8" />
+      <module name="karaf-rest-example-api" target="1.8" />
+      <module name="karaf-rest-example-client" target="1.8" />
+      <module name="karaf-rest-example-client-jersey" target="1.8" />
+      <module name="karaf-rest-example-dbase-connector" target="1.8" />
+      <module name="karaf-rest-example-features" target="1.8" />
+      <module name="karaf-rest-example-websvc" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

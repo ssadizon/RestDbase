@@ -1,0 +1,30 @@
+Manifest-Version: 1.0
+Build-Jdk-Spec: 15
+Bundle-Activator: org.apache.karaf.examples.rest.websvc.Activator
+Bundle-Blueprint: OSGI-INF/blueprint/rest.xml
+Bundle-Description: The Apache Software Foundation provides support for 
+ the Apache community of open-source software projects.    The Apache pr
+ ojects are characterized by a collaborative, consensus based developmen
+ t process, an open and    pragmatic software license, and a desire to c
+ reate high quality software that leads the way in its field.    We cons
+ ider ourselves not simply a group of projects sharing a server, but rat
+ her a community of developers    and users.
+Bundle-DocURL: http://karaf.apache.org/
+Bundle-License: https://www.apache.org/licenses/LICENSE-2.0.txt
+Bundle-ManifestVersion: 2
+Bundle-Name: Apache Karaf :: Examples :: REST :: Web Service
+Bundle-SymbolicName: org.apache.karaf.examples.karaf-rest-example-websvc
+Bundle-Vendor: The Apache Software Foundation
+Bundle-Version: 4.2.11
+Export-Package: org.apache.karaf.examples.rest.websvc;uses:="javax.ws.rs
+ ,org.apache.karaf.examples.rest.api,org.osgi.framework";version="4.2.11
+ "
+Import-Package: com.fasterxml.jackson.jaxrs.json,javax.ws.rs;version="[2
+ .1,3)",org.apache.karaf.examples.rest.api;version="[4.2,5)",org.osgi.fr
+ amework;version="[1.8,2)",org.osgi.service.blueprint;version="[1.0.0,2.
+ 0.0)",org.osgi.util.tracker;version="[1.5,2)"
+Import-Service: org.apache.aries.blueprint.NamespaceHandler;filter=(osgi
+ .service.blueprint.namespace=http://cxf.apache.org/blueprint/core),org.
+ apache.aries.blueprint.NamespaceHandler;filter=(osgi.service.blueprint.
+ namespace=http://cxf.apache.org/blueprint/jaxrs)
+Require-Capability: osgi.ee;filter:="(&(osgi.ee=JavaSE)(version=1.8))"
