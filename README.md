@@ -31,9 +31,9 @@ The "client" bundle uses the `BookingService` with a REST client stub.
 ## Artifacts
 
 * **karaf-rest-example-api** is a common bundle containing the `Booking` POJO and the `BookingService` interface.   
-* **karaf-rest-example-websvc** is a blueprint bundle providing the `BookingServiceRest` implementation of the `BookingService` interface.
-* **karaf-rest-example-dbase-connector** is a regular Blueprint bundle using the `BookingService`.
-* **karaf-rest-example-client-jersey** is a regular Blueprint REST client bundle using Jersey.
+* **karaf-rest-example-websvc** is a blueprint bundle providing the `BookingServiceRest` implementation of the `BookingService` interface. It uses JAX-RS.
+* **karaf-rest-example-dbase-connector** is a regular Blueprint bundle using the `BookingService`. It uses pax-jdbc-derby as driver.
+* **karaf-rest-example-client-jersey** is a regular Blueprint REST client bundle using Jersey. It 
 * **karaf-rest-example-features** provides a Karaf features repository used for the deployment.
 
 ## Build
@@ -49,7 +49,7 @@ mvn clean install
 On a running Karaf instance, register the features repository using:
 
 ```
-karaf@root()> feature:repo-add mvn:org.apache.karaf.examples/karaf-rest-example-features/LATEST/xml
+karaf@root()> feature:repo-add mvn:org.apache.karaf.examples/karaf-rest-example-features/4.2.11/xml
 ```
 
 Then, you can install the application:
@@ -60,7 +60,7 @@ karaf@root()> feature:install karaf-rest-example-app
 
 ## Usage
 
-Once you have install a client feature, you can use `booking:add` and `booking:list` commands to interact with the REST
+Once you have installed the application, you can use `booking:add` and `booking:list` commands to interact with the REST
 service.
 
 ```
