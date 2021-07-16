@@ -16,7 +16,12 @@
  */
 package org.apache.karaf.examples.rest.websvc;
 
-import java.util.Collection;
+import java.io.File;
+import java.io.FileReader;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Base64;
+import java.util.Properties;
 
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
@@ -26,50 +31,95 @@ import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
+import javax.ws.rs.core.Context;
+import javax.ws.rs.core.HttpHeaders;
+import javax.ws.rs.core.Response;
 
 import org.apache.karaf.examples.rest.api.Booking;
-import org.apache.karaf.examples.rest.api.BookingService;
+import org.apache.karaf.examples.rest.websvc.authenticator.Authenticator;
 
 @Path("/")
-public class BookingServiceRest implements BookingService {
-    
+public class BookingServiceRest implements I_BookingServiceRest {
+
+    @Context
+	private HttpHeaders headers;
+   
+    private Authenticator authenticator;
+	
     @Override
     @Path("/")
     @Produces("application/json")
     @GET
-    public Collection<Booking> list() {
+    public Response list() {
     	System.out.println("Calling BookingService.list()...");
-    	return ServiceCatcher.getBookingService().list();
+    	String headerValue = headers.getHeaderString("Authorization");
+    	authenticator = new Authenticator(headerValue);
+    	if(authenticator.isAuthorized()) {
+    		return Response.status(200).entity(ServiceCatcher.getBookingService().list()).build();	
+    	} else {
+    		return Response.status(401).build();
+    	}
     }
 
     @Override
     @Path("/{id}")
     @Produces("application/json")
     @GET
-    public Booking get(@PathParam("id") Long id) {
-        return null;
+    public Response get(@PathParam("id") Long id) {
+    	System.out.println("Calling BookingService.get()...");
+    	String headerValue = headers.getHeaderString("Authorization");
+    	authenticator = new Authenticator(headerValue);
+    	if(authenticator.isAuthorized()) {
+    		return Response.status(200).entity(ServiceCatcher.getBookingService().get(id)).build();	
+    	} else {
+    		return Response.status(401).build();
+    	}
     }
     
     @Override
     @Path("/")
     @Consumes("application/json")
     @POST
-    public void add(Booking booking) {
-        // TODO
+    public Response add(Booking booking) {
+    	System.out.println("Calling BookingService.add()...");
+    	String headerValue = headers.getHeaderString("Authorization");
+    	authenticator = new Authenticator(headerValue);
+    	if(authenticator.isAuthorized()) {
+    		ServiceCatcher.getBookingService().add(booking);
+    		return Response.status(200).build();	
+    	} else {
+        	return Response.status(401).build();
+    	}        
     }
 
     @Override
     @Path("/")
     @Consumes("application/json")
     @PUT
-    public void update(Booking booking) {
-        // TODO
+    public Response update(Booking booking) {
+    	System.out.println("Calling BookingService.update()...");
+    	String headerValue = headers.getHeaderString("Authorization");
+    	authenticator = new Authenticator(headerValue);
+    	if(authenticator.isAuthorized()) {
+            ServiceCatcher.getBookingService().update(booking);
+            return Response.status(200).build();
+    	} else {
+        	return Response.status(401).build();
+    	} 
     }
 
     @Override
     @Path("/{id}")
     @DELETE
-    public void remove(@PathParam("id") Long id) {
-        // TODO
+    public Response remove(@PathParam("id") Long id) {
+    	System.out.println("Calling BookingService.update()...");
+    	String headerValue = headers.getHeaderString("Authorization");
+    	authenticator = new Authenticator(headerValue);
+    	if(authenticator.isAuthorized()) {
+            ServiceCatcher.getBookingService().remove(id);
+            return Response.status(200).build();
+    	} else {
+        	return Response.status(401).build();
+    	} 
     }
 }
