@@ -16,24 +16,23 @@
     specific language governing permissions and limitations
     under the License.
 -->
-# Apache Karaf REST Example
+# Apache Karaf REST Example 
 
 ## Abstract
 
 This example shows how to use JAX-RS to implement a REST service.
 
-This example uses blueprint to deal with the jaxrs-server and Apache CXF as the implementation of the JAXRS specification.
-
 It implements a `BookingService` with a REST implementation. 
 
 The "client" bundle uses the `BookingService` with a REST client stub.
 
-## Artifacts
+This demonstrates how two different bundles communicate through `Service Registration`
+
+## Significant Artifacts
 
 * **karaf-rest-example-api** is a common bundle containing the `Booking` POJO and the `BookingService` interface.   
 * **karaf-rest-example-websvc** is a blueprint bundle providing the `BookingServiceRest` implementation of the `BookingService` interface. It uses JAX-RS.
 * **karaf-rest-example-dbase-connector** is a regular Blueprint bundle using the `BookingService`. It uses pax-jdbc-derby as driver.
-* **karaf-rest-example-client-jersey** is a regular Blueprint REST client bundle using Jersey. It 
 * **karaf-rest-example-features** provides a Karaf features repository used for the deployment.
 
 ## Build
@@ -43,6 +42,13 @@ The build uses Apache Maven. Simply use:
 ```
 mvn clean install
 ```
+
+## Launch Karaf
+
+Before anything else, you must first launch Apache Karaf. Navigate to Apache Karaf directory and invoke `bin/karaf`
+
+Note: There may be some instances that there might be some bundle installation issues. 
+These are bundle cache issue. To fix that, add clean to the launch command i.e `bin/karaf clean`
 
 ## Feature and Deployment
 
@@ -58,12 +64,57 @@ Then, you can install the application:
 karaf@root()> feature:install karaf-rest-example-app
 ```
 
-## Usage
+## Basic Authentication
 
-Once you have installed the application, you can use `booking:add` and `booking:list` commands to interact with the REST
-service.
+This example uses Basic Authentication to secure all its API calls.
 
 ```
-karaf@root()> booking:add 1 "John Doe" AF520
-karaf@root()> booking:list
+Credentials
+	- username: karaf
+	- password: karaf
+```
+
+## Usage
+
+Once you have installed the application, launch your preferred API client tool(during the development, we used Postman) to test the following APIs.
+
+```
+List all bookings
+Method: GET
+URL: http://localhost:8181/cxf/booking
+Response: List of all bookings(initally empty)
+Response Status Codes:
+	- 200: Successful
+	- 401: Unauthorized(Credentials are not valid)
+```
+
+```
+Add a booking
+Method: POST
+URL: http://localhost:8181/cxf/booking
+Request Body: {"customer": "<customer_name_here>","flight": "<flight_no_here>"}
+Response: N/A
+Response Status Codes:
+	- 200: Successful
+	- 401: Unauthorized(Credentials are not valid)
+```
+
+```
+Select a booking
+Method: GET
+URL: http://localhost:8181/cxf/booking/{id}
+Response: N/A
+Response Status Codes:
+	- 200: Successful
+	- 401: Unauthorized(Credentials are not valid)
+```
+
+```
+Select a booking
+Method: DELETE
+URL: http://localhost:8181/cxf/booking/{id}
+Response: N/A
+Response Status Codes:
+	- 200: Successful
+	- 401: Unauthorized(Credentials are not valid)
 ```
