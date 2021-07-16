@@ -31,8 +31,8 @@ This demonstrates how two different bundles communicate through `Service Registr
 ## Significant Artifacts
 
 * **karaf-rest-example-api** is a common bundle containing the `Booking` POJO and the `BookingService` interface.   
-* **karaf-rest-example-websvc** is a blueprint bundle providing the `BookingServiceRest` implementation of the `BookingService` interface. It uses JAX-RS.
-* **karaf-rest-example-dbase-connector** is a regular Blueprint bundle using the `BookingService`. It uses pax-jdbc-derby as driver.
+* **karaf-rest-example-websvc** is a bundle providing the `BookingServiceRest` implementation of the `BookingService` interface. It uses JAX-RS.
+* **karaf-rest-example-dbase-connector** is a bundle using the `BookingService`. It uses pax-jdbc-derby as driver.
 * **karaf-rest-example-features** provides a Karaf features repository used for the deployment.
 
 ## Build
@@ -119,4 +119,9 @@ Response: N/A
 Response Status Codes:
 	- 200: Successful
 	- 401: Unauthorized(Credentials are not valid)
+```
+
+To check if the actions and records do reflect on the database, you can do a simple database query.
+```
+jdbc:query jdbc/karaf-example "select * from karaf_example.booking"
 ```
