@@ -58,6 +58,8 @@ On a running Karaf instance, register the features repository using:
 karaf@root()> feature:repo-add mvn:org.apache.karaf.examples/karaf-rest-example-features/4.2.11/xml
 ```
 
+NOTE: There is an existing issue regarding missing dependencies even though they are already defined in the `features.xml` file. Work around for this is to manually deploy these JARs in `DependencyJars.zip` to `deploy`
+
 Then, you can install the application:
 
 ```
