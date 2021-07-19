@@ -7,16 +7,22 @@ import java.util.Arrays;
 import java.util.Base64;
 import java.util.Properties;
 
+import org.apache.karaf.examples.rest.websvc.metrics.RestMetricsToInfluxDB;
+
 public class Authenticator {
 	
 	private String headers;
 	
+	private RestMetricsToInfluxDB restMetricsToInfluxDB;
+		
 	public Authenticator(String headers) {
 		this.headers = headers;
+		restMetricsToInfluxDB = new RestMetricsToInfluxDB();
 	}
 	
 	public boolean isAuthorized() {
-	        System.out.println("Authenticator::isAuthorized()");
+		restMetricsToInfluxDB.meterRegistry();
+	    System.out.println("Authenticator::isAuthorized()");
 		boolean isAuthorized = false;
 		ArrayList headersValues = new ArrayList(Arrays.asList(this.headers.split(" ")));
 		if(headersValues.size() != 2 || !headersValues.get(0).equals("Basic")) {

@@ -131,3 +131,15 @@ To check if the actions and records do reflect on the database, you can do a sim
 ```
 jdbc:query jdbc/karaf-example "select * from karaf_example.booking"
 ```
+
+## Micrometer
+
+Micrometer has been integrated to monitor this application. Metrics are being sent to an InfluxDB.
+
+```
+URL: http://172.16.13.13:8086/
+username: admin
+password: keybridge123
+bucket: micrometer
+organization: Keybridge Wireless
+```
