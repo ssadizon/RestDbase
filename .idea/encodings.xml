@@ -5,6 +5,8 @@
     <file url="file://$PROJECT_DIR$/karaf-rest-example-client/karaf-rest-example-client-jersey/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/karaf-rest-example-dbase-connector/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/karaf-rest-example-features/src/main/feature" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/karaf-rest-example-jpa/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/karaf-rest-example-jpa/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/karaf-rest-example-websvc/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/karaf-rest-example-websvc/src/main/resources" charset="UTF-8" />
   </component>

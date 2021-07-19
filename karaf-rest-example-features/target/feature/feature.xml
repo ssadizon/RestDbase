@@ -58,6 +58,86 @@
         <bundle>mvn:org.apache.karaf.examples/karaf-rest-example-client-jersey/4.2.11</bundle>
     </feature>
 
+    <feature name="karaf-rest-example-app-jpa" version="4.2.11">
+        <feature dependency="true">http</feature>
+        <feature version="[2,3)">jpa</feature>
+        <feature version="[5,6)">hibernate</feature>
+
+        <requirement>osgi.service;effective:=active;filter:=(objectClass=org.osgi.service.http.HttpService)</requirement>
+        <feature dependency="true">aries-blueprint</feature>
+        <feature version="3.4.0" dependency="true">cxf-jaxrs</feature>
+        <bundle dependency="true">mvn:com.fasterxml.jackson.core/jackson-core/2.10.5</bundle>
+        <bundle dependency="true">mvn:com.fasterxml.jackson.core/jackson-annotations/2.10.5</bundle>
+        <bundle dependency="true">mvn:com.fasterxml.jackson.core/jackson-databind/2.10.5</bundle>
+        <bundle dependency="true">mvn:com.fasterxml.jackson.jaxrs/jackson-jaxrs-base/2.10.5</bundle>
+        <bundle dependency="true">mvn:com.fasterxml.jackson.jaxrs/jackson-jaxrs-json-provider/2.10.5</bundle>
+        <bundle dependency="true">mvn:org.eclipse.persistence/javax.persistence/2.1.0</bundle>
+
+<!--        <config name="org.ops4j.datasource-booking">-->
+<!--            osgi.jdbc.driver.class=org.h2.Driver-->
+<!--            databaseName=./booking;create=true-->
+<!--            dataSourceName=booking-->
+<!--        </config>-->
+<!--        <capability>-->
+<!--            osgi.service;objectClass=javax.sql.DataSource;effective:=active;osgi.jndi.service.name=booking-->
+<!--        </capability>-->
+
+<!--        <config name="org.ops4j.datasource-karaf-example">-->
+<!--            osgi.jdbc.driver.name=derby-->
+<!--&lt;!&ndash;            dataSourceName=jdbc/karaf-example&ndash;&gt;-->
+<!--            dataSourceName=booking-->
+<!--            url=jdbc:derby:data/example/derby;create=true-->
+<!--        </config>-->
+<!--        <capability>-->
+<!--            osgi.service;objectClass=javax.sql.DataSource;effective:=active;osgi.jndi.service.name=booking-->
+<!--        </capability>-->
+
+<!--        <config name="org.apache.karaf.examples.jdbc">-->
+<!--            ###############################################-->
+<!--            # Karaf Examples Registry Storage JDBC Configuration-->
+<!--            ###############################################-->
+
+<!--            # Name of the JDBC datasource-->
+<!--&lt;!&ndash;            datasource.name=jdbc/karaf-example&ndash;&gt;-->
+<!--            databaseName=./booking;create=true-->
+<!--            dataSourceName=booking-->
+<!--            dialect=derby-->
+<!--        </config>-->
+
+        <feature>jdbc</feature>
+        <feature>pax-jdbc-h2</feature>
+        <feature>jersey</feature>
+        <feature>pax-jdbc-config</feature>
+        <feature>transaction</feature>
+        <feature>jndi</feature>
+        <feature>pax-jdbc-pool-dbcp2</feature>
+        <feature>jpa</feature>
+
+<!--        <feature version="4.2.11">datasource</feature>-->
+
+        <bundle>mvn:org.apache.karaf.examples/karaf-rest-example-api/4.2.11</bundle>
+        <bundle>mvn:org.apache.karaf.examples/karaf-rest-example-jpa/4.2.11</bundle>
+        <bundle>mvn:org.apache.karaf.examples/karaf-rest-example-websvc/4.2.11</bundle>
+        <bundle>mvn:org.apache.karaf.examples/karaf-rest-example-client-jersey/4.2.11</bundle>
+    </feature>
+
+    <feature name="datasource" version="4.2.11">
+        <config name="org.ops4j.datasource-booking">
+            osgi.jdbc.driver.class=org.h2.Driver
+            databaseName=./booking;create=true
+            dataSourceName=booking
+        </config>
+        <capability>
+            osgi.service;objectClass=javax.sql.DataSource;effective:=active;osgi.jndi.service.name=booking
+        </capability>
+    </feature>
+
+    <feature name="karaf-rest-example-jpa" version="4.2.11">
+        <feature>scr</feature>
+        <bundle>mvn:org.apache.karaf.examples/karaf-rest-example-api/4.2.11</bundle>
+        <bundle>mvn:org.apache.karaf.examples/karaf-rest-example-jpa/4.2.11</bundle>
+    </feature>
+
     <feature name="hk2" description="HK2 support" version="2.6.1">
         <bundle dependency="true">mvn:org.javassist/javassist/3.25.0-GA</bundle>
         <bundle>mvn:org.glassfish.hk2.external/jakarta.inject/2.6.1</bundle>

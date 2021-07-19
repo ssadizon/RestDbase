@@ -8,6 +8,7 @@
       <module fileurl="file://$PROJECT_DIR$/karaf-rest-example-client/karaf-rest-example-client-jersey/karaf-rest-example-client-jersey.iml" filepath="$PROJECT_DIR$/karaf-rest-example-client/karaf-rest-example-client-jersey/karaf-rest-example-client-jersey.iml" />
       <module fileurl="file://$PROJECT_DIR$/karaf-rest-example-dbase-connector/karaf-rest-example-dbase-connector.iml" filepath="$PROJECT_DIR$/karaf-rest-example-dbase-connector/karaf-rest-example-dbase-connector.iml" />
       <module fileurl="file://$PROJECT_DIR$/karaf-rest-example-features/karaf-rest-example-features.iml" filepath="$PROJECT_DIR$/karaf-rest-example-features/karaf-rest-example-features.iml" />
+      <module fileurl="file://$PROJECT_DIR$/karaf-rest-example-jpa/karaf-rest-example-jpa.iml" filepath="$PROJECT_DIR$/karaf-rest-example-jpa/karaf-rest-example-jpa.iml" />
       <module fileurl="file://$PROJECT_DIR$/karaf-rest-example-websvc/karaf-rest-example-websvc.iml" filepath="$PROJECT_DIR$/karaf-rest-example-websvc/karaf-rest-example-websvc.iml" />
     </modules>
   </component>

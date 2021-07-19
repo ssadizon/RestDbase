@@ -66,6 +66,12 @@ Then, you can install the application:
 karaf@root()> feature:install karaf-rest-example-app
 ```
 
+If Using JPA, run this instead
+```shell
+karaf@root()> feature:install datasource
+karaf@root()> feature:install karaf-rest-example-app
+```
+
 ## Basic Authentication
 
 This example uses Basic Authentication to secure all its API calls.

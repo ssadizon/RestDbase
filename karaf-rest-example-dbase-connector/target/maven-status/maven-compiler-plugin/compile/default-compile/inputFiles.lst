@@ -1,2 +1,2 @@
-/home/sherwendizon/Lanex/Keybridge/Karaf/GitHub-Sherwen/RestDbase/karaf-rest-example-dbase-connector/src/main/java/org/apache/karaf/examples/jdbc/provider/BookingServiceJdbcImpl.java
-/home/sherwendizon/Lanex/Keybridge/Karaf/GitHub-Sherwen/RestDbase/karaf-rest-example-dbase-connector/src/main/java/org/apache/karaf/examples/jdbc/provider/Activator.java
+/Users/rumel/Projects/RestDbase/karaf-rest-example-dbase-connector/src/main/java/org/apache/karaf/examples/jdbc/provider/Activator.java
+/Users/rumel/Projects/RestDbase/karaf-rest-example-dbase-connector/src/main/java/org/apache/karaf/examples/jdbc/provider/BookingServiceJdbcImpl.java

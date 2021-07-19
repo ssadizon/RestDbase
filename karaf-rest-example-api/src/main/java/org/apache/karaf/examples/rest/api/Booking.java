@@ -16,13 +16,28 @@
  */
 package org.apache.karaf.examples.rest.api;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 /**
  * A regular POJO.
  */
+@Entity
+@Table(name="BOOKING")
 public class Booking {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @Column(name="customer")
     private String customer;
+
+    @Column(name="flight")
     private String flight;
 
     public Long getId() {

@@ -16,6 +16,10 @@ From: 'Eclipse Foundation' (https://www.eclipse.org)
   - Jakarta XML Binding API (https://github.com/eclipse-ee4j/jaxb-api/jakarta.xml.bind-api) jakarta.xml.bind:jakarta.xml.bind-api:jar:2.3.3
     License: Eclipse Distribution License - v 1.0  (http://www.eclipse.org/org/documents/edl-v10.php)
 
+From: 'Eclipse.org - EclipseLink Project' (http://www.eclipse.org/eclipselink)
+  - Javax Persistence (http://www.eclipse.org/eclipselink) org.eclipse.persistence:javax.persistence:jar:2.1.0
+    License: Eclipse Public License v1.0  (http://www.eclipse.org/legal/epl-v10.html)    License: Eclipse Distribution License v. 1.0  (http://www.eclipse.org/org/documents/edl-v10.php)
+
 From: 'FasterXML' (http://fasterxml.com/)
   - Jackson-annotations (http://github.com/FasterXML/jackson) com.fasterxml.jackson.core:jackson-annotations:bundle:2.10.5
     License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)

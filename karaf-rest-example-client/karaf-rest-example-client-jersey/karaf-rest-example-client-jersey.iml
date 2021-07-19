@@ -19,6 +19,7 @@
     <orderEntry type="library" name="Maven: jakarta.xml.bind:jakarta.xml.bind-api:2.3.3" level="project" />
     <orderEntry type="library" name="Maven: jakarta.activation:jakarta.activation-api:1.2.1" level="project" />
     <orderEntry type="module" module-name="karaf-rest-example-api" />
+    <orderEntry type="library" name="Maven: org.eclipse.persistence:javax.persistence:2.1.0" level="project" />
     <orderEntry type="library" name="Maven: org.apache.karaf.shell:org.apache.karaf.shell.core:4.2.11" level="project" />
     <orderEntry type="library" name="Maven: org.jline:jline:3.19.0" level="project" />
     <orderEntry type="library" name="Maven: org.apache.karaf.jaas:org.apache.karaf.jaas.boot:4.2.11" level="project" />

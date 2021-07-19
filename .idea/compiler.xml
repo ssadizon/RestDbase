@@ -9,6 +9,7 @@
         <module name="karaf-rest-example-client-jersey" />
         <module name="karaf-rest-example-websvc" />
         <module name="karaf-rest-example-dbase-connector" />
+        <module name="karaf-rest-example-jpa" />
         <module name="karaf-rest-example-api" />
       </profile>
     </annotationProcessing>
@@ -19,6 +20,7 @@
       <module name="karaf-rest-example-client-jersey" target="1.8" />
       <module name="karaf-rest-example-dbase-connector" target="1.8" />
       <module name="karaf-rest-example-features" target="1.8" />
+      <module name="karaf-rest-example-jpa" target="1.8" />
       <module name="karaf-rest-example-websvc" target="1.8" />
     </bytecodeTargetLevel>
   </component>

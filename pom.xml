@@ -38,6 +38,7 @@
         <module>karaf-rest-example-client</module>
         <module>karaf-rest-example-features</module>
         <module>karaf-rest-example-dbase-connector</module>
+      <module>karaf-rest-example-jpa</module>
     </modules>
     
 </project>

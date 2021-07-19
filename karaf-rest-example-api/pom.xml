@@ -32,6 +32,14 @@
     <name>Apache Karaf :: Examples :: REST :: API</name>
     <packaging>bundle</packaging>
 
+    <dependencies>
+        <dependency>
+            <groupId>org.eclipse.persistence</groupId>
+            <artifactId>javax.persistence</artifactId>
+            <version>2.1.0</version>
+        </dependency>
+    </dependencies>
+
     <build>
         <plugins>
             <plugin>
@@ -40,6 +48,12 @@
                 <configuration>
                     <instructions>
                         <Export-Package>org.apache.karaf.examples.rest.api</Export-Package>
+                        <Import-Package>
+                            javax.persistence;version="[2,3)",
+                            org.hibernate.proxy,
+                            javassist.util.proxy,
+                            *
+                        </Import-Package>
                     </instructions>
                 </configuration>
             </plugin>
