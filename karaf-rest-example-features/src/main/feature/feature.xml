@@ -34,6 +34,7 @@
         <bundle dependency="true">mvn:com.fasterxml.jackson.core/jackson-databind/${jackson.version}</bundle>
         <bundle dependency="true">mvn:com.fasterxml.jackson.jaxrs/jackson-jaxrs-base/${jackson.version}</bundle>
         <bundle dependency="true">mvn:com.fasterxml.jackson.jaxrs/jackson-jaxrs-json-provider/${jackson.version}</bundle>
+        <bundle dependency="true">wrap:mvn:io.micrometer/micrometer-registry-influx/1.7.1</bundle>
         <bundle dependency="true">mvn:org.eclipse.persistence/javax.persistence/2.1.0</bundle>
         
     	<config name="org.ops4j.datasource-karaf-example">
@@ -80,6 +81,7 @@
         <bundle dependency="true">mvn:com.fasterxml.jackson.core/jackson-databind/${jackson.version}</bundle>
         <bundle dependency="true">mvn:com.fasterxml.jackson.jaxrs/jackson-jaxrs-base/${jackson.version}</bundle>
         <bundle dependency="true">mvn:com.fasterxml.jackson.jaxrs/jackson-jaxrs-json-provider/${jackson.version}</bundle>
+        <bundle dependency="true">wrap:mvn:io.micrometer/micrometer-registry-influx/1.7.1</bundle>
         <bundle dependency="true">mvn:org.eclipse.persistence/javax.persistence/2.1.0</bundle>
 
 <!--        <config name="org.ops4j.datasource-booking">-->
