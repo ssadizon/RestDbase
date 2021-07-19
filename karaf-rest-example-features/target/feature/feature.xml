@@ -115,6 +115,7 @@
 
 <!--        <feature version="4.2.11">datasource</feature>-->
 
+        <feature version="4.2.11">datasource</feature>
         <bundle>mvn:org.apache.karaf.examples/karaf-rest-example-api/4.2.11</bundle>
         <bundle>mvn:org.apache.karaf.examples/karaf-rest-example-jpa/4.2.11</bundle>
         <bundle>mvn:org.apache.karaf.examples/karaf-rest-example-websvc/4.2.11</bundle>

@@ -115,6 +115,7 @@
 
 <!--        <feature version="${project.version}">datasource</feature>-->
 
+        <feature version="${project.version}">datasource</feature>
         <bundle>mvn:org.apache.karaf.examples/karaf-rest-example-api/${project.version}</bundle>
         <bundle>mvn:org.apache.karaf.examples/karaf-rest-example-jpa/${project.version}</bundle>
         <bundle>mvn:org.apache.karaf.examples/karaf-rest-example-websvc/${project.version}</bundle>
