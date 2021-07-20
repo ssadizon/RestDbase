@@ -68,7 +68,6 @@ karaf@root()> feature:install karaf-rest-example-app
 
 If using JPA, run this instead
 ```shell
-karaf@root()> feature:install datasource
 karaf@root()> feature:install karaf-rest-example-app-jpa
 ```
 
@@ -142,4 +141,24 @@ username: admin
 password: keybridge123
 bucket: micrometer
 organization: Keybridge Wireless
+```
+
+Metrics saved in InfluxDB
+
+```
+1. Gauges loaded and unloaded classes.
+2. Gauges buffer and memory pool utilization.
+3. Gauges max and live data size, promotion and allocation rates, and times Garbage Collection pauses.
+4. Gauges current CPU total and load average.
+5. Gauges thread peak, number of daemon threads, and live threads.
+```
+
+Implementing classes:
+
+```
+karaf-rest-example-websvc
+	- org/apache/karaf/examples/rest/websvc/metrics
+		- RestMetricsToInfluxDB.java: Configurations to InfluxDB and metrics are defined here.
+	- org/apache/karaf/examples/rest/websvc/authenticator
+		- Authenticator.java: Since every API call is authenticated, RestMetricsToInfluxDB is invoked here.
 ```
